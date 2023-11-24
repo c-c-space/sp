@@ -1,0 +1,98 @@
+html {
+    font-size: 16px;
+    height: -webkit-fill-available;
+}
+
+@media screen and (max-width: 550px) {
+    html {
+        font-size: 3.5vw;
+        height: -webkit-fill-available;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+nav {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-size: 150%;
+    writing-mode: vertical-lr;
+}
+
+body,
+nav p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    max-height: -webkit-fill-available;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+aside,
+nav {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+aside {
+    flex-flow: row-reverse;
+    max-width: 750px;
+}
+
+nav {
+    flex-flow: wrap;
+    place-self: end;
+}
+
+h1 {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+}
+
+h2 {
+    font-size: 95%;
+    font-weight: 500;
+    padding: 0;
+    margin: 2.5rem 0 0 2.5rem;
+    width: 70vw;
+    max-width: 500px;
+}
+
+nav {
+    padding: 0.25rem;
+    margin: 0;
+}
+
+nav input {
+    display: none;
+}
+
+nav input+label::before {
+    content: '[　]';
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+nav input:checked+label::before {
+    content: '[✔︎]';
+}
