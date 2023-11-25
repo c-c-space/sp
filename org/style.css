@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   flex-flow: wrap;
-  font-size: 0.75rem;
-  padding: 0;
+  padding: 0.5rem;
+  margin: 0;
   list-style: none;
   list-style-position: inside;
 }
@@ -70,20 +70,4 @@
   padding: 0.5rem 1rem;
   margin: 0;
   text-decoration: none;
-}
-
-@media screen and (max-width: 550px) {
-  .list {
-    font-size: 2.25vw;
-  }
-
-  .list * {
-    padding: 1vw;
-  }
-
-  .list a {
-    border: solid 0.2vw;
-    border-radius: 5vw;
-    padding: 1.25vw 2.5vw;
-  }
 }

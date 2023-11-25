@@ -1,25 +1,24 @@
-const now = new Date();
-const hour = now.getHours();
+let weareArr
 
 if (hour >= 11 && hour <= 15) {
-    images = {
-        'day/001.gif': ['楽観のテクニック'],
-        'day/002.gif': ['楽観のテクニック'],
-        'day/003.gif': ['楽観のテクニック'],
-        'day/004.gif': ['楽観のテクニック'],
-    }
+    weareArr = [
+        'weare/day/001.gif',
+        'weare/day/002.gif',
+        'weare/day/003.gif',
+        'weare/day/004.gif'
+    ]
 } else if (hour >= 16 && hour <= 20) {
-    images = {
-        'night/001.gif': ['楽観のテクニック'],
-        'night/002.gif': ['楽観のテクニック'],
-        'night/003.JPG': ['楽観のテクニック'],
-        'night/004.JPG': ['楽観のテクニック'],
-    }
+    weareArr = [
+        'weare/night/001.gif',
+        'weare/night/002.gif',
+        'weare/night/003.gif',
+        'weare/night/004.gif'
+    ]
 } else {
-    images = {
-        'close/001.gif': ['楽観のテクニック'],
-        'close/002.gif': ['楽観のテクニック'],
-        'close/003.JPG': ['楽観のテクニック'],
-        'close/004.JPG': ['楽観のテクニック'],
-    }
+    weareArr = [
+        'weare/close/001.gif',
+        'weare/close/002.gif',
+        'weare/close/003.JPG',
+        'weare/close/004.JPG'
+    ]
 }
