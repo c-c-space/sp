@@ -11,8 +11,8 @@ if (hour >= 11 && hour <= 15) {
     weareArr = [
         'weare/night/001.gif',
         'weare/night/002.gif',
-        'weare/night/003.gif',
-        'weare/night/004.gif'
+        'weare/night/003.JPG',
+        'weare/night/004.JPG'
     ]
 } else {
     weareArr = [

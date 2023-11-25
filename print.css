@@ -1,0 +1,60 @@
+html {
+    font-size: 2.5vw;
+}
+
+article:not(#print),
+article:not(#print) aside {
+    position: relative;
+    height: auto;
+}
+
+article,
+article[hidden] {
+    display: grid;
+}
+
+#cover {
+    height: 100vh;
+    max-height: 100vh;
+}
+
+article section {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+article section,
+article aside {
+    position: relative;
+    min-height: 100vh;
+    max-height: auto;
+    page-break-after: always;
+}
+
+#org ul {
+    padding: 2rem;
+    min-height: 100vh;
+    page-break-before: always;
+}
+
+article#org {
+    place-items: start center;
+}
+
+article aside {
+    flex-flow: column;
+    padding: 0;
+}
+
+article aside img {
+    margin: 5vh;
+    width: auto;
+    height: 40vh;
+}
+
+#speed,
+nav {
+    display: none;
+}

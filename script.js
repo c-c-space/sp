@@ -1,3 +1,10 @@
+async function fetchHTML(url = '', query = '') {
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      document.querySelector(query).innerHTML = html
+    })
+}
 
 function thisIMG(query, arr) {
   arr.forEach((arrEach) => {
@@ -9,11 +16,17 @@ function thisIMG(query, arr) {
 
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === 'interactive') {
+    fetchHTML("img/readme.html", "#img section")
     thisIMG("#img aside", imgArr)
-    thisIMG("#sign aside", signArr)
-    thisIMG("#www aside", wwwArr)
+    fetchHTML("weare/readme.html", "#weare section")
     thisIMG("#weare aside", weareArr)
+    fetchHTML("sign/readme.html", "#sign section")
+    thisIMG("#sign aside", signArr)
+    fetchHTML("www/readme.html", "#www section")
+    thisIMG("#www aside", wwwArr)
+    fetchHTML("org/readme.html", "#org section div")
     thisIMG("#org aside", orgArr)
+    fetchHTML("readme.html", "#print section")
 
     const scrollElementAll = document.querySelectorAll('aside');
     scrollElementAll.forEach((scrollElement) => {
@@ -34,38 +47,38 @@ document.addEventListener('readystatechange', event => {
     const next = document.querySelector('#next');
     const past = document.querySelector('#past');
 
-    let i = 0;
+    let ii = 0;
     thisArticle()
 
     function thisArticle() {
       for (const articleThis of articleAll) {
         articleThis.hidden = true;
       }
-      articleAll[i].hidden = false;
+      articleAll[ii].hidden = false;
     };
 
     next.addEventListener('click', function () {
-      if (i == 0) {
-        i++;
-      } else if (i == 1) {
-        i++;
-      } else if (i < articleAll.length - 1) {
-        i++;
-      } else if (i == articleAll.length - 1) {
-        i = 0;
+      if (ii == 0) {
+        ii++;
+      } else if (ii == 1) {
+        ii++;
+      } else if (ii < articleAll.length - 1) {
+        ii++;
+      } else if (ii == articleAll.length - 1) {
+        ii = 0;
       }
       thisArticle()
     }, false);
 
     past.addEventListener('click', function () {
-      if (i == 0) {
-        i = articleAll.length - 1;
-      } else if (i == 1) {
-        i--;
-      } else if (i < articleAll.length - 1) {
-        i--;
-      } else if (i == articleAll.length - 1) {
-        i--;
+      if (ii == 0) {
+        ii = articleAll.length - 1;
+      } else if (ii == 1) {
+        ii--;
+      } else if (ii < articleAll.length - 1) {
+        ii--;
+      } else if (ii == articleAll.length - 1) {
+        ii--;
       }
       thisArticle()
     }, false);

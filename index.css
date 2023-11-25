@@ -2,6 +2,13 @@ html {
     font-size: 16px;
 }
 
+@media screen and (max-width: 550px) {
+    html {
+        font-size: 3.21vw;
+        height: -webkit-fill-available;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -10,23 +17,42 @@ html {
     display: none;
 }
 
-h1 {
+h1,
+article section p {
     font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    font-weight: 500;
 }
 
+article section ul,
+#flash,
 nav {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.pehu {
+    font-family: "MS Mincho", "SimSong", serif;
+    font-weight: 400;   
+}
+
 h1 {
     font-size: 150%;
+    font-style: italic;
+    font-weight: 500;
     writing-mode: vertical-lr;
 }
 
+article:not(#org) section {
+    pointer-events: none;
+    user-select: none;
+}
+
+article section h1,
+article section p {
+    text-shadow: 0.05rem 0.05rem 0 #fff;
+}
+
 body,
-nav p {
+ul,
+li {
     padding: 0;
     margin: 0;
 }
@@ -39,11 +65,11 @@ article {
 
 h1 {
     float: right;
-    background: #eee;
+    background: #fff;
     color: #000;
     mix-blend-mode: difference;
     padding: 0.5rem 1rem 0.25rem 0;
-    margin: 0.5rem;
+    margin: 1rem 0;
     height: max-content;
 }
 
@@ -61,22 +87,33 @@ article {
     place-items: start center;
 }
 
-section {
+article#org {
+    place-items: center;
+}
+
+article section {
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 750px;
+    max-height: 90%;
+    overflow: auto;
     z-index: 1;
 }
 
-aside,
+article aside,
 nav {
     display: flex;
+}
+
+nav {
+    flex-flow: wrap;
     justify-content: space-between;
 }
 
-aside {
+article aside {
     position: absolute;
     align-items: center;
+    justify-content: space-between;
     overflow: auto;
     width: 100%;
     height: 100%;
@@ -84,36 +121,32 @@ aside {
 }
 
 @media (orientation: landscape) {
-    aside {
+    article aside {
         flex-flow: row;
     }
 
-    aside img {
+    article aside img {
         height: 100%;
     }
 }
 
 @media (orientation: portrait) {
-    html {
-        font-size: 3.21vw;
-        height: -webkit-fill-available;
-    }
-
-    aside {
+    article aside {
         flex-flow: column;
     }
 
-    aside img {
+    article aside img {
         width: 100%;
     }
 }
 
-nav {
+#btn {
     position: fixed;
     bottom: 0;
     gap: 0.5rem;
     flex-flow: wrap;
     place-self: end;
+    z-index: 100;
 }
 
 nav,
@@ -129,5 +162,7 @@ nav button {
     background: #fff9;
     color: #000;
     font-size: 200%;
+    width: 3rem;
+    height: 3rem;
     outline: none;
 }

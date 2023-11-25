@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no" />
-    
+
     <script>
         const now = new Date();
         const hour = now.getHours();
@@ -37,10 +37,13 @@
 
     <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="print.css" media="print" />
+    <link rel="stylesheet" href="sign/style.css">
+    <link rel="stylesheet" href="org/style.css">
 </head>
 
 <body>
-    <article hidden>
+    <article id="cover" hidden>
         <section>
             <h1>
                 <ruby>
@@ -65,9 +68,17 @@
                 </ruby>
                 める
             </h1>
+            <ul id="flash"></ul>
         </section>
+        <p id="speed">
+            <input id="flash_speed" type="range" value="" min="500" max="5000">
+        </p>
     </article>
     <article id="img" hidden>
+        <section></section>
+        <aside></aside>
+    </article>
+    <article id="weare" hidden>
         <section></section>
         <aside></aside>
     </article>
@@ -79,16 +90,19 @@
         <section></section>
         <aside></aside>
     </article>
-    <article id="weare" hidden>
-        <section></section>
+    <article id="org" hidden>
+        <section>
+            <div></div>
+            <nav id="feel"></nav>
+            <ul class="list"></ul>
+        </section>
         <aside></aside>
     </article>
-    <article id="org" hidden>
+    <article id="print" hidden>
         <section></section>
-        <aside></aside>
     </article>
 
-    <nav>
+    <nav id="btn">
         <button id="past"><b>←</b></button>
         <button id="next"><b>→</b></button>
     </nav>
