@@ -16,13 +16,17 @@
     display: none;
 }
 
+#flash,
+#speed {
+    width: 72.5vw;
+    max-width: 550px;
+}
+
 #flash {
     position: relative;
     padding: 0;
-    margin: 2.5rem 0 0 0;
-    width: 70vw;
-    height: 70vw;
-    max-width: 550px;
+    margin: 2rem 0 0 0;
+    height: 72.5vw;
     max-height: 550px;
     overflow: hidden;
     list-style: inside none;
@@ -42,11 +46,6 @@
 #flash li b {
     font-size: 700%;
     filter: invert();
-}
-
-#speed {
-    width: 75%;
-    max-width: 550px;
 }
 
 #speed input[type="range"] {

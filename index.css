@@ -40,7 +40,11 @@ h1 {
     writing-mode: vertical-lr;
 }
 
-article:not(#org) section {
+#img section,
+#weare section,
+#sign section,
+#www section,
+#print section {
     pointer-events: none;
     user-select: none;
 }
@@ -58,6 +62,7 @@ li {
 }
 
 article {
+    position: relative;
     width: 100%;
     height: 100vh;
     max-height: -webkit-fill-available;
@@ -120,12 +125,24 @@ article aside {
     z-index: 0;
 }
 
+#player {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
 @media (orientation: landscape) {
     article aside {
         flex-flow: row;
     }
 
     article aside img {
+        height: 100%;
+    }
+
+    #player {
+        transform: translate(-50%, -50%);
+        width: 100%;
         height: 100%;
     }
 }
@@ -137,6 +154,13 @@ article aside {
 
     article aside img {
         width: 100%;
+    }
+
+    #player {
+        width: 100vh;
+        height: 100vw;
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center center;
     }
 }
 
