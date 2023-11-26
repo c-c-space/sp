@@ -70,22 +70,23 @@ async function sign(gradient, flash, csv) {
         `)
         .join('');
     document.querySelector(flash).innerHTML = flashAll;
-}
 
-function viewSlide(elem, i = -1) {
-    let liArr = document.querySelectorAll(elem);
-    if (i >= 0) {
-        liArr[i].hidden = true;
-    }
-    i++;
+    function viewSlide(elem, i = -1) {
+        let liArr = document.querySelectorAll(elem);
+        if (i >= 0) {
+            liArr[i].hidden = true;
+        }
+        i++;
 
-    if (i >= liArr.length) {
-        i = 0;
+        if (i >= liArr.length) {
+            i = 0;
+        }
+        liArr[i].hidden = false;
+        const speed = document.querySelector('#flash_speed')
+        let msec = speed.max - speed.value;
+        setTimeout(function () {
+            viewSlide(elem, i);
+        }, msec);
     }
-    liArr[i].hidden = false;
-    const speed = document.querySelector('#flash_speed')
-    let msec = speed.max - speed.value;
-    setTimeout(function () {
-        viewSlide(elem, i);
-    }, msec);
+    viewSlide('#flash li');
 }
