@@ -41,6 +41,11 @@ async function sign(gradient, flash, csv) {
     cover.style.animation = `gradient ${speed}s ease infinite`;
     cover.style.backgroundImage = `linear-gradient(0deg, ${gradientAll} #fff)`;
 
+    window.addEventListener("beforeprint", () => {
+      cover.style.backgroundSize = '100% 100%';
+      cover.style.animation = 'gradient none';
+    });
+
     const flashAll = data.slice(1)
         .map(sign => `
         <li style="background:#${sign[1]};" hidden>
