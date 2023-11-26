@@ -26,8 +26,6 @@ function onYouTubePlayerAPIReady() {
     videoId: '03NUCp-h_tM',
     playerVars: {
         'playsinline': 1,
-        'autoplay': 1,
-        'loop': 1,
         'controls': 0,
         'rel': 0
     }
