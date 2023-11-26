@@ -54,6 +54,7 @@ article aside img {
     height: 40vh;
 }
 
+#player,
 #speed,
 nav {
     display: none;
