@@ -34,6 +34,8 @@ function onYouTubePlayerAPIReady() {
 
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === 'interactive') {
+    sign('#cover', '#flash', 'sign/index.csv')
+    
     fetchHTML("img/readme.html", "#img section")
     thisIMG("#img aside", imgArr)
     fetchHTML("weare/readme.html", "#weare section")

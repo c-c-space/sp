@@ -26,6 +26,24 @@ if (hour >= 11 && hour <= 15) {
     ]
 }
 
+function changeHidden() {
+    const mainAll = document.querySelectorAll('main')
+    mainAll.forEach(main => {
+        if (main.hidden == false) {
+            main.hidden = true;
+        } else {
+            main.animate(
+                [
+                    { opacity: 0 },
+                    { opacity: 1 }
+                ],
+                { duration: 1000 }
+            )
+            main.hidden = false
+        }
+    })
+}
+
 async function sign(gradient, flash, csv) {
     const cover = document.querySelector(gradient)
     const response = await fetch(csv);
@@ -35,15 +53,13 @@ async function sign(gradient, flash, csv) {
     const gradientAll = data.slice(1)
         .map(color => `#${color[1]},`)
         .join('');
-    let size = data.length * 50;
-    cover.style.backgroundSize = `100% ${size}%`;
-    let speed = data.length * 5;
-    cover.style.animation = `gradient ${speed}s ease infinite`;
+    cover.style.backgroundSize = '100% 1000%';
+    cover.style.animation = 'gradient 100s ease infinite';
     cover.style.backgroundImage = `linear-gradient(0deg, ${gradientAll} #fff)`;
 
     window.addEventListener("beforeprint", () => {
-      cover.style.backgroundSize = '100% 100%';
-      cover.style.animation = 'gradient none';
+        cover.style.backgroundSize = '100% 100%';
+        cover.style.animation = 'gradient none';
     });
 
     const flashAll = data.slice(1)
@@ -74,7 +90,3 @@ async function sign(gradient, flash, csv) {
     }
     viewSlide('#flash li');
 }
-
-window.addEventListener("load", () => {
-    sign('#cover', '#flash', 'sign/index.csv');
-}, false)
