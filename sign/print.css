@@ -1,0 +1,21 @@
+#collection {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column wrap;
+  height: auto;
+  max-height: auto;
+}
+
+#collection iframe {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+}
+
+#log {
+  display: none;
+}
