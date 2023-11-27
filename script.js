@@ -7,12 +7,29 @@ async function fetchHTML(url = '', query = '') {
 }
 
 function thisIMG(query, arr) {
+  document.querySelector(query).innerHTML = "";
   arr.forEach((arrEach) => {
     const crearIMG = document.createElement("img");
     crearIMG.src = arrEach;
     document.querySelector(query).appendChild(crearIMG)
   });
 }
+
+window.addEventListener("beforeprint", () => {
+  fetchHTML("readme.html", "#img section")
+  thisIMG("#img aside", imgAll)
+  thisIMG("#weare aside", weareAll)
+  thisIMG("#sign aside", signAll)
+  thisIMG("#www aside", wwwAll)
+})
+
+window.addEventListener("afterprint", () => {
+  fetchHTML("img/readme.html", "#img section")
+  thisIMG("#img aside", imgArr)
+  thisIMG("#weare aside", imgArr)
+  thisIMG("#sign aside", signArr)
+  thisIMG("#www aside", wwwArr)
+})
 
 // Load the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
@@ -25,9 +42,9 @@ function onYouTubePlayerAPIReady() {
   player = new YT.Player('player', {
     videoId: '03NUCp-h_tM',
     playerVars: {
-        'playsinline': 1,
-        'controls': 0,
-        'rel': 0
+      'playsinline': 1,
+      'controls': 0,
+      'rel': 0
     }
   });
 }
@@ -35,7 +52,7 @@ function onYouTubePlayerAPIReady() {
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === 'interactive') {
     sign('#cover', '#flash', 'sign/index.csv')
-    
+
     fetchHTML("img/readme.html", "#img section")
     thisIMG("#img aside", imgArr)
     fetchHTML("weare/readme.html", "#weare section")
@@ -46,7 +63,6 @@ document.addEventListener('readystatechange', event => {
     thisIMG("#www aside", wwwArr)
     fetchHTML("org/readme.html", "#org section div")
     thisIMG("#org aside", orgArr)
-    fetchHTML("readme.html", "#print section")
 
     const scrollElementAll = document.querySelectorAll('aside');
     scrollElementAll.forEach((scrollElement) => {

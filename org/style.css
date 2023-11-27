@@ -9,8 +9,6 @@
 }
 
 .list * {
-  box-sizing: border-box;
-  display: inline-block;
   padding: 0.25rem;
 }
 

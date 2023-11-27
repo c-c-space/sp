@@ -25,3 +25,12 @@ if (hour >= 11 && hour <= 15) {
         "www/close/005.JPG"
     ]
 }
+
+wwwAll = [
+    "www/day/004.gif",
+    "www/night/005.jpeg",
+    "www/day/003.jpeg",
+    "www/night/003.JPG",
+    "www/close/003.JPG",
+    "www/close/005.JPG"
+]

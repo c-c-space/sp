@@ -40,3 +40,16 @@ if (hour >= 11 && hour <= 15) {
         "img/close/010.jpeg"
     ]
 }
+
+const imgAll = [
+    "img/day/001.gif",
+    "img/day/002.gif",
+    "img/day/003.jpeg",
+    "img/day/004.gif",
+    "img/day/005.jpeg",
+    "img/day/006.gif",
+    "img/night/001.jpeg",
+    "img/night/002.jpeg",
+    "img/night/009.gif",
+    "img/night/010.JPG"
+]

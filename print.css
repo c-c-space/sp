@@ -2,15 +2,31 @@ html {
     font-size: 2.5vw;
 }
 
-article:not(#print),
-article:not(#print) aside {
+article,
+article[hidden] {
+    display: block;
+}
+
+article,
+article section,
+article aside {
     position: relative;
     height: auto;
 }
 
-article,
-article[hidden] {
-    display: grid;
+article section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+article:not(#org) section,
+#org section div {
+    padding: 2rem;
+}
+
+#org section nav {
+    padding: 0 2rem;
 }
 
 #cover {
@@ -18,29 +34,34 @@ article[hidden] {
     max-height: 100vh;
 }
 
-article section {
-    width: 100%;
-    max-width: 100%;
-    padding: 2rem;
+article section,
+article aside {
+    min-height: 100vh;
+    max-height: auto;
+}
+
+#org ul.list {
+    height: 400vh;
     overflow: hidden;
 }
 
 article section,
-article aside {
-    position: relative;
-    min-height: 100vh;
-    max-height: auto;
+article aside,
+#org section nav {
     page-break-after: always;
 }
 
-#org ul {
-    padding: 2rem;
-    min-height: 100vh;
-    page-break-before: always;
+#org ul.list {
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 0 0.5rem;
 }
 
-article#org {
-    place-items: start center;
+#org ul.list li,
+#org ul.list li[hidden] {
+    display: inline-flex;
+    padding: 0.5rem;
+    page-break-inside: avoid;
 }
 
 article aside {
@@ -54,8 +75,18 @@ article aside img {
     height: 40vh;
 }
 
-#player,
+#feel {
+    margin-top: 50vh;
+}
+
+#feel label {
+    font-size: 333%;
+}
+
+#flash li,
 #speed,
-nav {
+#org aside,
+#print,
+#btn {
     display: none;
 }

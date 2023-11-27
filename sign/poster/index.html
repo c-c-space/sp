@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>自分の気持ちを知る・表す</title>
+  <meta content="自分の気持ちを知る・表す 色と記号" name="description">
+  <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
+  <link rel="stylesheet" href="../log.css">
+  <script src="../script.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      sign('#cover', '#flash', 'log.csv')
+    }, false)
+  </script>
+</head>
+
+<body>
+  <main id="cover" onclick="changeHidden()"></main>
+  <main hidden>
+    <ul id="flash" onclick="changeHidden()"></ul>
+    <p id="speed">
+      <input id="flash_speed" type="range" value="" min="500" max="5000">
+    </p>
+  </main>
+</body>
+
+</html>

@@ -26,6 +26,15 @@ if (hour >= 11 && hour <= 15) {
     ]
 }
 
+const signAll = [
+    "sign/day/001.gif",
+    "sign/day/002.gif",
+    "sign/night/001.gif",
+    "sign/night/004.gif",
+    "sign/day/004.gif",
+    "sign/day/005.gif"
+]
+
 function changeHidden() {
     const mainAll = document.querySelectorAll('main')
     mainAll.forEach(main => {
@@ -53,13 +62,25 @@ async function sign(gradient, flash, csv) {
     const gradientAll = data.slice(1)
         .map(color => `#${color[1]},`)
         .join('');
+
     cover.style.backgroundSize = '100% 1000%';
     cover.style.animation = 'gradient 100s ease infinite';
     cover.style.backgroundImage = `linear-gradient(0deg, ${gradientAll} #fff)`;
 
+    const qr = document.createElement('img')
+    qr.src = '../qr.png'
+    qr.art = 'https://creative-community.space/sp/'
+
     window.addEventListener("beforeprint", () => {
         cover.style.backgroundSize = '100% 100%';
         cover.style.animation = 'gradient none';
+        document.querySelector(flash).appendChild(qr)
+    });
+
+    window.addEventListener("afterprint", () => {
+        cover.style.backgroundSize = '100% 1000%';
+        cover.style.animation = 'gradient 100s ease infinite';
+        qr.remove()
     });
 
     const flashAll = data.slice(1)

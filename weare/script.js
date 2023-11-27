@@ -22,3 +22,12 @@ if (hour >= 11 && hour <= 15) {
         'weare/close/004.JPG'
     ]
 }
+
+const weareAll = [
+    'weare/day/001.gif',
+    'weare/day/002.gif',
+    'weare/day/003.gif',
+    'weare/day/004.gif',
+    'weare/night/001.gif',
+    'weare/night/002.gif'
+]
