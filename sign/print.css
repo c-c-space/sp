@@ -3,6 +3,7 @@
   flex-flow: column;
   height: auto;
   max-height: auto;
+  overflow: auto;
 }
 
 #collection iframe {
