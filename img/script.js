@@ -51,5 +51,9 @@ const imgAll = [
     "img/night/001.jpeg",
     "img/night/002.jpeg",
     "img/night/009.gif",
-    "img/night/010.JPG"
+    "img/night/010.JPG",
+    "img/close/005.jpeg",
+    "img/close/006.jpeg",
+    "img/close/007.JPG",
+    "img/close/008.JPG"
 ]
