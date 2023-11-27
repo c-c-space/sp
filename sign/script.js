@@ -68,7 +68,7 @@ async function sign(gradient, flash, csv) {
     cover.style.backgroundImage = `linear-gradient(0deg, ${gradientAll} #fff)`;
 
     const qr = document.createElement('img')
-    qr.src = '../qr.png'
+    qr.src = 'qr.png'
     qr.art = 'https://creative-community.space/sp/'
 
     window.addEventListener("beforeprint", () => {
