@@ -1,9 +1,12 @@
+body,
+#collection {
+  height: auto;
+  max-height: auto;
+}
+
 #collection {
   position: relative;
   flex-flow: column;
-  height: 700vh;
-  max-height: auto;
-  overflow: auto;
 }
 
 #collection iframe {
