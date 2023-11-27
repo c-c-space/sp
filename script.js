@@ -26,7 +26,7 @@ window.addEventListener("beforeprint", () => {
 window.addEventListener("afterprint", () => {
   fetchHTML("img/readme.html", "#img section")
   thisIMG("#img aside", imgArr)
-  thisIMG("#weare aside", imgArr)
+  thisIMG("#weare aside", weareArr)
   thisIMG("#sign aside", signArr)
   thisIMG("#www aside", wwwArr)
 })
