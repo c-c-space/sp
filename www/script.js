@@ -32,8 +32,8 @@ wwwAll = [
     "www/day/001.jpeg",
     "www/close/001.JPG",
     "www/day/002.gif",
-    "www/close/002.gif",
     "www/day/003.jpeg",
+    "www/night/002.gif",
     "www/night/003.JPG",
     "www/close/003.JPG",
     "www/close/005.JPG"
