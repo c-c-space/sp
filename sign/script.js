@@ -59,7 +59,7 @@ async function sign(gradient, flash, csv) {
     const text = await response.text();
     const data = text.trim().split('\n')
         .map(line => line.split(',').map(x => x.trim()));
-    const gradientAll = data.slice(1)
+    const gradientAll = data.slice()
         .map(color => `#${color[1]},`)
         .join('');
 
