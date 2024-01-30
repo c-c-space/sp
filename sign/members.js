@@ -30,8 +30,8 @@ document.addEventListener('readystatechange', event => {
     })
   }
 
-  const collection = document.querySelector('#collection');
-  collection.addEventListener('wheel', (e) => {
+  const scrollElement = document.querySelector('#collection');
+  scrollElement.addEventListener('wheel', (e) => {
     if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
     const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
     if (
