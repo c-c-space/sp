@@ -80,13 +80,12 @@ document.addEventListener('readystatechange', event => {
     });
   } else if (event.target.readyState === 'complete') {
     document.querySelector('#btn').hidden = false;
-    
+
     const articleAll = document.querySelectorAll('article');
     const next = document.querySelector('#next');
     const past = document.querySelector('#past');
 
     let ii = 0;
-    thisArticle()
 
     function thisArticle() {
       for (const articleThis of articleAll) {
