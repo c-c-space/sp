@@ -6,61 +6,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no" />
 
+  <meta content="website" property="og:type">
   <title>自分の気持ちを知る・表す</title>
+  <meta content="自分の気持ちを知る・表す" property="og:title">
   <meta content="令和三年三月から九月までのの気持ちを知る・表す" name="description">
-  <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
-  <link rel="stylesheet" href="https://creative-community.space/sign/css/style.css" />
-  
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
+  <meta content="令和三年三月から九月までのの気持ちを知る・表す" name="og:description">
 
-    #collection {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      flex-flow: row nowrap;
-      overflow-x: auto;
-      scroll-snap-type: x proximity;
-      height: 100vh;
-      max-height: -webkit-fill-available;
-    }
+  <!--for Twitter-->
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="https://creative-community.space/sp/" property="og:url">
+  <meta content="https://creative-community.space/sp/sign/day/002.gif" property="og:image">
+  <meta content="https://creative-community.space/sp/sign/day/002.gif" name="twitter:image:src">
 
-    #collection iframe {
-      border: none;
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      scroll-snap-align: center;
-      width: 90vw;
-      max-width: 750px;
-      height: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="print.css" media="print" />
+  <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
 </head>
 
 <body>
-  <nav id="log" class="hidden">
-    <select>
-      <option selected disabled>自分の気持ちを知る・表す</option>
-    </select>
-  </nav>
-
   <main id="collection">
-    <iframe src="202103/"></iframe>
-    <iframe src="202104/"></iframe>
-    <iframe src="202105/"></iframe>
-    <iframe src="202106/"></iframe>
-    <iframe src="202107/"></iframe>
-    <iframe src="202108/"></iframe>
-    <iframe src="202109/"></iframe>
+    <article id="march">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
+    <article id="april">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
+    <article id="may">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
+    <article id="june">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
+    <article id="july">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
+    <article id="august">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
+    <article id="september">
+      <section class="cover" onclick="changeHidden()"></section>
+      <section hidden>
+        <ul class="flash" onclick="changeHidden()"></ul>
+      </section>
+    </article>
   </main>
 
-  <script src="members.js"></script>
+  <main id="speed" hidden>
+    <input id="flash_speed" type="range" value="" min="500" max="5000">
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('readystatechange', event => {
+      sign('#march .cover', '#march .flash', '2021/03.csv')
+      sign('#april .cover', '#april .flash', '2021/04.csv')
+      sign('#may .cover', '#may .flash', '2021/05.csv')
+      sign('#june .cover', '#june .flash', '2021/06.csv')
+      sign('#july .cover', '#july .flash', '2021/07.csv')
+      sign('#august .cover', '#august .flash', '2021/08.csv')
+      sign('#september .cover', '#september .flash', '2021/09.csv')
+    })
+
+    window.addEventListener("load", () => {
+      const scrollElementAll = document.querySelectorAll('#collection');
+      scrollElementAll.forEach((scrollElement) => {
+        scrollElement.addEventListener('wheel', (e) => {
+          if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+          const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
+          if (
+            (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
+            (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+          )
+            return;
+          e.preventDefault();
+          scrollElement.scrollLeft += e.deltaY;
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

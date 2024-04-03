@@ -1,18 +1,38 @@
-let orgArr
+'use strict'
 
-if (hour >= 11 && hour <= 15) {
-    orgArr = [
-        'org/day/001.gif',
-        'org/day/002.gif',
-    ]
-} else if (hour >= 16 && hour <= 20) {
-    orgArr = [
-        'org/night/001.gif'
-    ]
-} else {
-    orgArr = [
-        'org/close/001.jpg'
-    ]
+let feel = {
+    'happy': '🙂',
+    'hearts': '🥰',
+    'tongue': '😜',
+    'thinking': '🤔',
+    'neutral': '😐',
+    'relieved': '😌',
+    'dizzy': '😵',
+    'frowning': '😮',
+    'crying': '😢',
+    'steam': '😤',
+}
+
+// ラジオボタンの生成
+function orgNav(arr, name) {
+    let orgEach = arr + 'Each';
+    let orgRadio = arr + 'Radio';
+    let orgLabel = arr + 'Label';
+
+    let orgInput = document.querySelector(`#${name}`);
+    Object.entries(arr).forEach(orgEach => {
+        const orgRadio = document.createElement('input');
+        orgRadio.setAttribute('type', 'radio');
+        orgRadio.setAttribute('name', `${name}`);
+        orgRadio.setAttribute('id', orgEach[0]);
+        orgRadio.value = orgEach[0];
+        orgInput.appendChild(orgRadio);
+
+        const orgLabel = document.createElement('label');
+        orgLabel.setAttribute('for', orgEach[0]);
+        orgLabel.innerText = orgEach[1];
+        orgInput.appendChild(orgLabel);
+    }, false);
 }
 
 let weight = {
@@ -32,21 +52,8 @@ let size = {
     'unknown': '?',
 }
 
-let feel = {
-    'happy': '🙂',
-    'hearts': '🥰',
-    'tongue': '😜',
-    'thinking': '🤔',
-    'neutral': '😐',
-    'relieved': '😌',
-    'dizzy': '😵',
-    'frowning': '😮',
-    'crying': '😢',
-    'steam': '😤',
-}
-
 async function orgAll(query, csv) {
-    const orgAll = document.querySelector(query)
+    const orgAll = document.querySelector(query);
     const response = await fetch(csv);
     const text = await response.text();
     const data = text.trim().split('\n')
@@ -61,49 +68,18 @@ async function orgAll(query, csv) {
     orgAll.innerHTML = allORG;
 }
 
-// ラジオボタンの生成
-function radio(arr, name) {
-    let orgEach = arr + 'Each'
-    let orgRadio = arr + 'Radio'
-    let orgLabel = arr + 'Label'
-
-    let orgInput = document.querySelector(`#${name}`)
-    Object.entries(arr).forEach(orgEach => {
-        const orgRadio = document.createElement('input')
-        orgRadio.setAttribute('type', 'radio')
-        orgRadio.setAttribute('name', `${name}`)
-        orgRadio.setAttribute('id', orgEach[0])
-        orgRadio.value = orgEach[0]
-        orgInput.appendChild(orgRadio)
-
-        const orgLabel = document.createElement('label')
-        orgLabel.setAttribute('for', orgEach[0])
-        orgLabel.innerText = orgEach[1]
-        orgInput.appendChild(orgLabel)
-    })
-}
-
-
-document.addEventListener('readystatechange', event => {
-    if (event.target.readyState === 'interactive') {
-        radio(feel, "feel");
-        orgAll('#org ul', 'org/index.csv');
-    } else if (event.target.readyState === 'complete') {
-        let radioAll = document.querySelectorAll('#feel input')
-        let targets = document.querySelectorAll('#org ul.list li');
-
-        if (radioAll) {
-            for (let iii of radioAll) {
-                iii.addEventListener('change', () => {
-                    for (let iiii of targets) {
-                        iiii.hidden = true;
-                    }
-                    let orgAll = document.querySelectorAll(`#org ul.list li.${iii.value}`);
-                    for (let iiiii of orgAll) {
-                        iiiii.hidden = false;
-                    }
-                })
+window.addEventListener("load", () => {
+    let radioAll = document.querySelectorAll('#org nav input');
+    let targets = document.querySelectorAll('#org ul.list li');
+    for (let iii of radioAll) {
+        iii.addEventListener('change', () => {
+            for (let iiii of targets) {
+                iiii.hidden = true;
             }
-        }
+            let orgAll = document.querySelectorAll(`#org ul.list li.${iii.value}`);
+            for (let iiiii of orgAll) {
+                iiiii.hidden = false;
+            }
+        })
     }
 });

@@ -1,26 +1,14 @@
-html {
-    font-size: 2.5vw;
+#cover,
+#cover[hidden] {
+    display: grid;
+    height: 100vh;
+    max-height: 100vh;
 }
 
-article,
-article[hidden] {
-    display: block;
+article#org section {
+    padding: 0;
 }
 
-article,
-article section,
-article aside {
-    position: relative;
-    height: auto;
-}
-
-article section {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-article:not(#org) section,
 #org section div {
     padding: 2rem;
 }
@@ -29,24 +17,11 @@ article:not(#org) section,
     padding: 0 2rem;
 }
 
-#cover {
-    height: 100vh;
-    max-height: 100vh;
-}
-
-article section,
-article aside {
-    min-height: 100vh;
-    max-height: auto;
-}
-
 #org ul.list {
-    height: 400vh;
+    height: 300vh;
     overflow: hidden;
 }
 
-article section,
-article aside,
 #org section nav {
     page-break-after: always;
 }
@@ -64,17 +39,6 @@ article aside,
     page-break-inside: avoid;
 }
 
-article aside {
-    flex-flow: column;
-    padding: 0;
-}
-
-article aside img {
-    margin: 5vh;
-    width: auto;
-    height: 40vh;
-}
-
 #feel {
     margin-top: 50vh;
 }
@@ -85,8 +49,6 @@ article aside img {
 
 #flash li,
 #speed,
-#org aside,
-#print,
-#btn {
+#print {
     display: none;
 }

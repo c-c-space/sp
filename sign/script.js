@@ -1,20 +1,4 @@
-function changeHidden() {
-    const mainAll = document.querySelectorAll('main')
-    mainAll.forEach(main => {
-        if (main.hidden == false) {
-            main.hidden = true;
-        } else {
-            main.animate(
-                [
-                    { opacity: 0 },
-                    { opacity: 1 }
-                ],
-                { duration: 1000 }
-            )
-            main.hidden = false
-        }
-    })
-}
+'use strict'
 
 async function sign(gradient, flash, csv) {
     const cover = document.querySelector(gradient)
@@ -72,5 +56,23 @@ async function sign(gradient, flash, csv) {
             viewSlide(elem, i);
         }, msec);
     }
-    viewSlide('#flash li');
+    viewSlide(`${flash} li`);
+}
+
+function changeHidden() {
+    const mainAll = document.querySelectorAll('main, article section')
+    mainAll.forEach(main => {
+        if (main.hidden == false) {
+            main.hidden = true;
+        } else {
+            main.animate(
+                [
+                    { opacity: 0 },
+                    { opacity: 1 }
+                ],
+                { duration: 1000 }
+            )
+            main.hidden = false
+        }
+    })
 }

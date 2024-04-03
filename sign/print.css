@@ -1,22 +1,21 @@
-body,
 #collection {
+  flex-flow: column;
   height: auto;
   max-height: auto;
 }
 
-#collection {
-  position: relative;
-  flex-flow: column;
-}
-
-#collection iframe {
+#collection article {
   width: 100%;
   max-width: 100%;
   height: 100vh;
-  max-height: -webkit-fill-available;
-  page-break-after: always;
+  max-height: 100vh;
 }
 
-#log {
+#collection article section:not(.cover),
+#speed {
   display: none;
+}
+
+#collection article section.cover {
+  display: block;
 }

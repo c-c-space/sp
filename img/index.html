@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta content="website" property="og:type">
+    <title>新しい生活を集める</title>
+    <meta content="新しい生活を集める" property="og:title">
+    <meta content="このページに表示される 展覧会 「新しい生活を集める」 の 記録写真は、 閲覧時間 によって変化します。" name="description">
+    <meta content="このページに表示される 展覧会 「新しい生活を集める」 の 記録写真は、 閲覧時間 によって変化します。" name="og:description">
+
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="https://creative-community.space/sp/" property="og:url">
+    <meta content="https://creative-community.space/sp/img/day/001.gif" property="og:image">
+    <meta content="https://creative-community.space/sp/img/day/001.gif" name="twitter:image:src">
+
+    <script src="script.js"></script>
+    <script src="img.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
+</head>
+
+<body>
+    <article id="img">
+        <section></section>
+        <aside></aside>
+    </article>
+    <script>
+        directory = 'https://ia600308.us.archive.org/24/items/creative-community.space/';
+        thisIMG("#img aside", imgArr)
+
+        fetch('readme.html')
+            .then(response => response.text())
+            .then(html => {
+                document.querySelector('#img section').innerHTML = html
+            })
+    </script>
+</body>
+
+</html>

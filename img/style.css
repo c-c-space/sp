@@ -1,0 +1,116 @@
+html {
+    font-size: 16px;
+    height: -webkit-fill-available;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+article {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+article {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: -webkit-fill-available;
+}
+
+article {
+    display: grid;
+    place-items: start center;
+}
+
+article section {
+    position: absolute;
+    filter: invert();
+    mix-blend-mode: difference;
+    width: 90%;
+    max-width: 750px;
+    max-height: 90%;
+    overflow: auto;
+    z-index: 1;
+}
+
+article aside {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+@media (orientation: landscape) {
+    article aside {
+        flex-flow: row;
+    }
+
+    article aside img {
+        height: 100%;
+    }
+}
+
+@media (orientation: portrait) {
+    article aside {
+        flex-flow: column;
+    }
+
+    article aside img {
+        width: 100%;
+    }
+}
+
+@media print {
+    html {
+        font-size: 2.5vw;
+    }
+
+    article,
+    article[hidden] {
+        display: block;
+    }
+
+    article,
+    article section,
+    article aside {
+        position: relative;
+        height: auto;
+    }
+
+    article section {
+        filter: invert(0);
+        mix-blend-mode: normal;
+        padding: 2rem;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    article section,
+    article aside {
+        min-height: 100vh;
+        max-height: auto;
+        page-break-after: always;
+    }
+
+    article aside {
+        flex-flow: column;
+        padding: 0;
+    }
+
+    article aside img {
+        margin: 5vh;
+        width: auto;
+        height: 40vh;
+    }
+}

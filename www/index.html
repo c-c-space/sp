@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta content="website" property="og:type">
+    <title>新しい生活を集める</title>
+    <meta content="新しい生活を集める" property="og:title">
+    <meta content="2021年10月10日(日) - 30日(土) | 会場 音ビル 559-0011 大阪府大阪市住之江区北加賀屋 5-5-1 | 主催 クリエイティブ・コミュニティスペース ペフ"
+        name="description">
+    <meta content="2021年10月10日(日) - 30日(土) | 会場 音ビル 559-0011 大阪府大阪市住之江区北加賀屋 5-5-1 | 主催 クリエイティブ・コミュニティスペース ペフ"
+        name="og:description">
+
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
+</head>
+
+<body>
+    <main id="www"></main>
+    <article id="img" hidden></article>
+    <article id="org" hidden></article>
+    <article id="sign" hidden></article>
+
+    <nav id="btn" hidden>
+        <button id="past"><b>←</b></button>
+        <button id="next"><b>→</b></button>
+    </nav>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchText("../www/script.js", "#www");
+        fetchText("../img/script.js", "#img");
+        fetchText("../org/script.js", "#org");
+        fetchText("../sign/script.js", "#sign");
+    });
+</script>
+
+</html>

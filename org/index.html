@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta content="website" property="og:type">
+    <title>新しい生活を集める</title>
+    <meta content="新しい生活を集める" property="og:title">
+    <meta content="文字の太さは言葉の強さ、大きさは感情の方向を表します。感想は絵文字によって絞り込むことができます。" name="description">
+    <meta content="文字の太さは言葉の強さ、大きさは感情の方向を表します。感想は絵文字によって絞り込むことができます。" name="og:description">
+
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="https://creative-community.space/sp/" property="og:url">
+    <meta content="https://creative-community.space/sp/org/day/001.gif" property="og:image">
+    <meta content="https://creative-community.space/sp/org/day/001.gif" name="twitter:image:src">
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            orgNav(feel, "feel");
+            orgAll('#org ul', 'index.csv');
+        });
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://creative-community.space/ver/icon/favicon.png">
+</head>
+
+<body id="org">
+    <nav id="feel"></nav>
+    <ul class="list"></ul>
+</body>
+
+</html>
