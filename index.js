@@ -1,6 +1,6 @@
 'use strict'
 
-directory = 'https://ia600308.us.archive.org/24/items/creative-community.space/';
+directory = '';
 
 document.addEventListener("DOMContentLoaded", () => {
     sign('#cover', '#flash', 'sign/index.csv')
